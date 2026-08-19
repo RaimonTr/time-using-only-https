@@ -13,7 +13,7 @@ Sometimes you need a timestamp you can trust without depending on:
 
 This one-liner gets the current time straight from an HTTP `Date` response header — every HTTP/1.1 server is required to send one, and `github.com` is reliable, fast, and usually reachable even from locked-down networks.
 
-### The command
+### The command (bash)
 
 ```bash
 RAW_DATE=$(curl -sI https://github.com | grep -i '^date:' | sed 's/[Dd]ate: //' | tr -d '\r') \
@@ -63,7 +63,7 @@ A veces necesitas un timestamp fiable sin depender de:
 
 Este comando obtiene la hora actual directamente de la cabecera HTTP `Date` de una respuesta — todo servidor HTTP/1.1 está obligado a enviarla, y `github.com` es fiable, rápido y normalmente accesible incluso desde redes muy restringidas.
 
-### El comando
+### El comando (bash)
 
 ```bash
 RAW_DATE=$(curl -sI https://github.com | grep -i '^date:' | sed 's/[Dd]ate: //' | tr -d '\r') \
