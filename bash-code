@@ -1,0 +1,1 @@
+RAW_DATE=$(curl -sI https://github.com | grep -i '^date:' | sed 's/[Dd]ate: //' | tr -d '\r') && [ -n "$RAW_DATE" ] && EPOCH=$(TZ="UTC" date -d "$RAW_DATE" +"%s") && TZ="Europe/Madrid" date -d "@$EPOCH" +"%Y-%m-%d %H:%M:%S GMT%z" | sed -E 's/GMT\+0([0-9])00/GMT+\1/; s/GMT-0([0-9])00/GMT-\1/'
